@@ -1,3 +1,20 @@
+
+# Edit ZAP file
+
+./scripts/tools/zap/run_zaptool.sh silabs_examples/daniel_app/daniel_DataModel_config/daniel_app.zap
+
+# Generate code from ZAP file
+
+./scripts/tools/zap/generate.py silabs_examples/daniel_app/daniel_DataModel_config/daniel_app.zap -o zzz_generated/daniel_app/zap-generated
+
+# Build firmware
+
+./scripts/examples/gn_efr32_example.sh ./silabs_examples/daniel_app/efr32 ./out/daniel_app BRD2601B
+
+# Flash firmware
+
+python3 out/daniel_app/BRD2601B/chip-efr32-daniel-app.flash.py
+
 # Matter EFR32 Template App
 
 <hr>
